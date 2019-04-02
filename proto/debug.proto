@@ -1,0 +1,17 @@
+// Copyright 2018 Edgecore
+// Contributors: Edgecore
+// version: 1.0
+// date: 2019.3.20
+
+syntax = "proto3";
+
+package dOLT;
+import "dolt.proto";
+
+// debug service
+service Debug {
+    rpc Start(Empty) returns (Empty);
+    rpc Stop(Empty) returns (Empty);
+    rpc SendCmd(OmciMsg) returns (Empty);
+    rpc RecvReply(Empty) returns (stream OmciMsg);
+}

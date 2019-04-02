@@ -1,0 +1,29 @@
+
+MibTreeWidget{
+    /* set the font properties*/
+    font-size:12px;
+    color: black;
+}
+
+
+MibTreeWidget::item{
+    margin:5px;
+    /*background: #F6F6F6;*/
+    background-clip: margin;
+}
+
+QSplitter::handle {
+    background-color: #c0c0c0
+}
+
+QToolButton {
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+QToolBar {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

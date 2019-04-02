@@ -1,0 +1,40 @@
+// Copyright 2018 China Mobile
+// Contributors: China Mobile, Huawei, ZTE, Fiberhome, Nokia, Broadcom, Edgecore
+// version: 1.0
+// date: 2019.2.12
+
+syntax = "proto3";
+
+package dOLT;
+
+// dOLT service
+service dOLT {
+
+    // Send omci message from vOMCI to dOLT
+    rpc SendOmci(stream OmciMsg) returns (Empty);
+
+    // Recv omci message from dOLT to vOMCI
+    rpc ReceiveOmci(Empty) returns (stream OmciMsg);
+
+}
+
+message Empty {
+
+}
+
+message OmciMsg {
+    // OLT id
+    string olt_id = 1;
+
+    // Borad slot id
+    fixed32 slot_id = 2;
+
+    // Pon port id
+    fixed32 intf_id = 3;
+
+    // ONU id
+    fixed32 onu_id = 4;
+
+    // OMCI message
+    bytes pkt = 5;
+}
